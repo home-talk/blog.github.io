@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx-Windows 的安装和配置 | Doraemon</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="个人开发笔记">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.2a573b45.css" as="style"><link rel="preload" href="/assets/js/app.4e817bdf.js" as="script"><link rel="preload" href="/assets/js/3.f9c9dbb0.js" as="script"><link rel="preload" href="/assets/js/1.154bf585.js" as="script"><link rel="preload" href="/assets/js/42.7a668132.js" as="script"><link rel="prefetch" href="/assets/js/10.4e90d7c0.js"><link rel="prefetch" href="/assets/js/11.17ac2ab2.js"><link rel="prefetch" href="/assets/js/12.34e4a3b0.js"><link rel="prefetch" href="/assets/js/13.e068ffd2.js"><link rel="prefetch" href="/assets/js/14.c3f728b2.js"><link rel="prefetch" href="/assets/js/15.4ca3c555.js"><link rel="prefetch" href="/assets/js/16.c7420be9.js"><link rel="prefetch" href="/assets/js/17.b60c5d2d.js"><link rel="prefetch" href="/assets/js/18.fe84b6ed.js"><link rel="prefetch" href="/assets/js/19.f5831a5e.js"><link rel="prefetch" href="/assets/js/20.f16f59c7.js"><link rel="prefetch" href="/assets/js/21.7d255802.js"><link rel="prefetch" href="/assets/js/22.c28f1600.js"><link rel="prefetch" href="/assets/js/23.1ea39ac3.js"><link rel="prefetch" href="/assets/js/24.a45e4554.js"><link rel="prefetch" href="/assets/js/25.149b49ec.js"><link rel="prefetch" href="/assets/js/26.596c292e.js"><link rel="prefetch" href="/assets/js/27.bb435329.js"><link rel="prefetch" href="/assets/js/28.bf07f442.js"><link rel="prefetch" href="/assets/js/29.1f071924.js"><link rel="prefetch" href="/assets/js/30.94a96ea3.js"><link rel="prefetch" href="/assets/js/31.174e9303.js"><link rel="prefetch" href="/assets/js/32.94e6dee1.js"><link rel="prefetch" href="/assets/js/33.174e5963.js"><link rel="prefetch" href="/assets/js/34.4cc7f57a.js"><link rel="prefetch" href="/assets/js/35.0bc1239e.js"><link rel="prefetch" href="/assets/js/36.548f3eb1.js"><link rel="prefetch" href="/assets/js/37.28b9b076.js"><link rel="prefetch" href="/assets/js/38.d6a807ff.js"><link rel="prefetch" href="/assets/js/39.4f74a1ea.js"><link rel="prefetch" href="/assets/js/4.30b95c46.js"><link rel="prefetch" href="/assets/js/40.a6dd2725.js"><link rel="prefetch" href="/assets/js/41.9fff28ef.js"><link rel="prefetch" href="/assets/js/43.2fe656d2.js"><link rel="prefetch" href="/assets/js/44.d8b830a2.js"><link rel="prefetch" href="/assets/js/45.cb6496b4.js"><link rel="prefetch" href="/assets/js/46.69d856b8.js"><link rel="prefetch" href="/assets/js/47.5c9d86da.js"><link rel="prefetch" href="/assets/js/48.4e6de21c.js"><link rel="prefetch" href="/assets/js/49.87b6239c.js"><link rel="prefetch" href="/assets/js/5.1907fd74.js"><link rel="prefetch" href="/assets/js/50.4486fc53.js"><link rel="prefetch" href="/assets/js/51.cf75a314.js"><link rel="prefetch" href="/assets/js/6.c231d460.js"><link rel="prefetch" href="/assets/js/7.de697a5f.js"><link rel="prefetch" href="/assets/js/8.c0394d6e.js"><link rel="prefetch" href="/assets/js/9.ffd888ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2a573b45.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-dad8a512><div data-v-dad8a512><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-dad8a512 data-v-dad8a512><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4c577eb6 data-v-dad8a512 data-v-dad8a512><h3 class="title" style="display:none;" data-v-4c577eb6 data-v-4c577eb6>Doraemon</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-4c577eb6 data-v-4c577eb6><input type="password" value="" data-v-4c577eb6> <span data-v-4c577eb6>Konck! Knock!</span> <button data-v-4c577eb6>OK</button></label> <div class="footer" style="display:none;" data-v-4c577eb6 data-v-4c577eb6><span data-v-4c577eb6><i class="iconfont reco-copyright" data-v-4c577eb6></i> <a data-v-4c577eb6><span data-v-4c577eb6>小叮当</span>
+            
+          <span data-v-4c577eb6>2012 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-dad8a512><header class="navbar" data-v-dad8a512><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Doraemon</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端开发/" class="nav-link"><i class="iconfont undefined"></i>
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="iconfont undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/运维/" class="nav-link"><i class="iconfont undefined"></i>
+  运维
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="iconfont undefined"></i>
+  关于我
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/technology/operations/nginx/.html#" class="nav-link"><i class="iconfont reco-github"></i>
+  GitHub
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-dad8a512></div> <aside class="sidebar" data-v-dad8a512><div class="personal-info-wrapper" data-v-ca798c94 data-v-dad8a512><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    小叮当
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>39</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>25</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端开发/" class="nav-link"><i class="iconfont undefined"></i>
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="iconfont undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/运维/" class="nav-link"><i class="iconfont undefined"></i>
+  运维
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="iconfont undefined"></i>
+  关于我
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/technology/operations/nginx/.html#" class="nav-link"><i class="iconfont reco-github"></i>
+  GitHub
+</a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4c577eb6 data-v-dad8a512><h3 class="title" style="display:none;" data-v-4c577eb6 data-v-4c577eb6>Nginx-Windows 的安装和配置</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-4c577eb6 data-v-4c577eb6><input type="password" value="" data-v-4c577eb6> <span data-v-4c577eb6>Konck! Knock!</span> <button data-v-4c577eb6>OK</button></label> <div class="footer" style="display:none;" data-v-4c577eb6 data-v-4c577eb6><span data-v-4c577eb6><i class="iconfont reco-copyright" data-v-4c577eb6></i> <a data-v-4c577eb6><span data-v-4c577eb6>小叮当</span>
+            
+          <span data-v-4c577eb6>2012 - </span>
+          2023
+        </a></span></div></div> <div data-v-dad8a512><main class="page"><div class="page-title" style="display:none;"><h1>Nginx-Windows 的安装和配置</h1> <hr> <div data-v-aa64b9d0><i class="iconfont reco-account" data-v-aa64b9d0><span data-v-aa64b9d0>小叮当</span></i> <i class="iconfont reco-date" data-v-aa64b9d0><span data-v-aa64b9d0>2020-08-09</span></i> <i class="iconfont reco-eye" data-v-aa64b9d0><span id="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-aa64b9d0><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-aa64b9d0><span class="tag-item" data-v-aa64b9d0>Nginx</span><span class="tag-item" data-v-aa64b9d0>运维</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>常用命令：</p> <p>重新加载配置文件：<code>nginx -s reload</code></p> <p>快速停止 nginx：<code>nginx -s stop</code></p> <p>完整有序的停止 nginx：<code>nginx -s quit</code></p> <p>杀 nginx 进程：<code>taskkill taskkill /f /t /im nginx.exe</code></p> <h2 id="_1、下载-nginx-for-windows，并解压到程序目录"><a href="#_1、下载-nginx-for-windows，并解压到程序目录" class="header-anchor">#</a> 1、下载 nginx for windows，并解压到程序目录</h2> <p>官网下载列表：<a href="http://nginx.org/en/download.html" target="_blank" rel="noopener noreferrer">http://nginx.org/en/download.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="http://nginx.org/download/nginx-1.16.0.zip" target="_blank" rel="noopener noreferrer">直接下载 nginx-1.16.0.zip<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="_2、启动-nginx"><a href="#_2、启动-nginx" class="header-anchor">#</a> 2、启动 nginx</h2> <p>方法一、直接双击 nginx.exe</p> <p>方法二、在 nginx 目录打开<code>cmd</code>输入命令 <code>nginx.exe</code> 或者 <code>start nginx</code> ，回车即可</p> <p>方法三（生产环境推荐使用此方法）、将 Nginx 设置为 Windows 服务</p> <p>工具：Windows Service Wrapper(winsw.exe)，<a href="http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/2.2.0/winsw-2.2.0-net4.exe" target="_blank" rel="noopener noreferrer">下载地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。GitHub 地址：<a href="https://github.com/kohsuke/winsw" target="_blank" rel="noopener noreferrer">https://github.com/kohsuke/winsw<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>基本使用命令如下：</p> <ul><li>To install a service, run myapp.exe install</li> <li>To start a service, run myapp.exe start</li> <li>To stop a service, run myapp.exe stop</li> <li>To restart a service, run myapp.exe restart</li> <li>To uninstall a service, run myapp.exe uninstall</li></ul> <p>将<code>winsw-2.2.0-net4.exe</code>文件下载，放在 Nginx 的根目录，重命名为<code>nginx-service.exe</code></p> <p>创建文件<code>nginx-service.xml</code>并且填入如下内容：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token operator">&lt;</span>?xml <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token string">&quot;1.0&quot;</span> <span class="token assign-left variable">encoding</span><span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span> ?<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>service<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span>nginx<span class="token operator">&lt;</span>/id<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>nginx<span class="token operator">&lt;</span>/name<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>description<span class="token operator">&gt;</span>nginx<span class="token operator">&lt;</span>/description<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>executable<span class="token operator">&gt;</span>D:/Program Files/nginx-1.12.2/nginx.exe<span class="token operator">&lt;</span>/executable<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>startargument<span class="token operator">&gt;</span>-p<span class="token operator">&lt;</span>/startargument<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>startargument<span class="token operator">&gt;</span>D:/Program Files/nginx-1.12.<span class="token operator"><span class="token file-descriptor important">2</span>&lt;</span>/startargument<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>logpath<span class="token operator">&gt;</span>D:/Program Files/nginx-1.12.2/logs<span class="token operator">&lt;</span>/logpath<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>logmode<span class="token operator">&gt;</span>roll<span class="token operator">&lt;</span>/logmode<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>stopexecutable<span class="token operator">&gt;</span>D:/Program Files/nginx-1.12.2/nginx.exe<span class="token operator">&lt;</span>/stopexecutable<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>stopargument<span class="token operator">&gt;</span>-p<span class="token operator">&lt;</span>/stopargument<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>stopargument<span class="token operator">&gt;</span>D:/Program Files/nginx-1.12.<span class="token operator"><span class="token file-descriptor important">2</span>&lt;</span>/stopargument<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>stopargument<span class="token operator">&gt;</span>-s<span class="token operator">&lt;</span>/stopargument<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>stopargument<span class="token operator">&gt;</span>stop<span class="token operator">&lt;</span>/stopargument<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>stoptimeout<span class="token operator">&gt;</span>6sec<span class="token operator">&lt;</span>/stoptimeout<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>/service<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>创建文件<code>nginx-service.exe.config</code>并且填入如下内容（tips，正常情况下不需要此文件）：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token operator">&lt;</span>configuration<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>startup<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>supportedRuntime <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token string">&quot;v2.0.50727&quot;</span> /<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>supportedRuntime <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token string">&quot;v4.0&quot;</span> /<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>/startup<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>runtime<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>generatePublisherEvidence <span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token string">&quot;false&quot;</span>/<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>/runtime<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>/configuration<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>使用如下命令安装，成功后可在 service 中查看到名为 <code>nginx</code> 的服务</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>nginx-service.exe <span class="token function">install</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_3、检查-nginx-是否启动成功"><a href="#_3、检查-nginx-是否启动成功" class="header-anchor">#</a> 3、检查 nginx 是否启动成功</h2> <p>浏览器地址栏输入网址 http://localhost</p> <h2 id="_4、端口占用排查"><a href="#_4、端口占用排查" class="header-anchor">#</a> 4、端口占用排查</h2> <ul><li>检查 80 端口是否被占用：<code>netstat -ano | findstr 0.0.0.0:80</code></li></ul> <p>或<code>netstat -ano | findstr &quot;80&quot;</code></p> <ul><li>tips：基本上停止 IIS 80 端口站点就不会出现 80 端口占用的情况了</li></ul> <h2 id="_5、nginx-之反向代理"><a href="#_5、nginx-之反向代理" class="header-anchor">#</a> 5、nginx 之反向代理</h2> <p>nginx 的配置文件是 conf 目录下的 nginx.conf，默认配置的 nginx 监听的端口为 80，如果 80 端口被占用可以修改为未被占用的端口即可。</p> <p>当我们修改了 nginx 的配置文件 nginx.conf 时，不需要关闭 nginx 后重新启动 nginx，只需要执行命令<code>nginx -s reload</code> 即可让改动生效。</p> <p>例子：通过 proxy_pass 配置请求转发地址，即当我们依然输入http://localhost/test 时，请求会跳转到我们配置的服务器(http://localhost:9000/)</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>location /test/ <span class="token punctuation">{</span>
+    proxy_pass   http://localhost:9000/<span class="token punctuation">;</span>
+	proxy_set_header        Host <span class="token variable">$host</span><span class="token punctuation">;</span>
+    proxy_set_header        X-Real-IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>  <span class="token comment">#获取真实ip</span>
+    proxy_set_header REMOTE-HOST <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+    proxy_connect_timeout   <span class="token number">90</span><span class="token punctuation">;</span>
+    proxy_send_timeout      <span class="token number">90</span><span class="token punctuation">;</span>
+    proxy_read_timeout      <span class="token number">90</span><span class="token punctuation">;</span>
+    proxy_buffer_size       4k<span class="token punctuation">;</span>
+    proxy_buffers           <span class="token number">4</span> 32k<span class="token punctuation">;</span>
+    proxy_busy_buffers_size 64k<span class="token punctuation">;</span>
+    proxy_temp_file_write_size 64k<span class="token punctuation">;</span>
+    proxy_set_header X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span><span class="token comment">#获取代理者的真实ip</span>
+    proxy_redirect          off<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>Windows 安装 Nginx 参考地址：<a href="https://www.cnblogs.com/jiangwangxiang/p/8481661.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/jiangwangxiang/p/8481661.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>让 Nginx 作为 Windows 服务开机自启动：<a href="https://blog.csdn.net/zhengun/article/details/84825320" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/zhengun/article/details/84825320<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>Windows 下将 nginx 配置成服务并设置开机自启动：<a href="https://blog.csdn.net/liutong123987/article/details/79112707" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/liutong123987/article/details/79112707<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://blog.csdn.net/h610443955/article/details/81096506" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/h610443955/article/details/81096506<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="_6、nginx-服务器安装-ssl-证书"><a href="#_6、nginx-服务器安装-ssl-证书" class="header-anchor">#</a> 6、nginx 服务器安装 SSL 证书</h2> <p><a href="https://help.aliyun.com/knowledge_detail/95491.html" target="_blank" rel="noopener noreferrer">https://help.aliyun.com/knowledge_detail/95491.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>修改配置文件<code>nginx.conf</code>，指定 ssl 证书路径，监听 443 端口。执行命令<code>nginx -s quit</code>退出 Nginx，再重新启动</p> <div class="language- extra-class"><pre><code>server {
+    listen       443 ssl;
+    server_name  www.bbb.com;
+    resolver 114.114.114.114 223.5.5.5 valid=3600s;
+    #ssl on;
+    ssl_certificate      cert/1_www.bbb.com.crt;
+    ssl_certificate_key  cert/2_www.bbb.com.key;
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+
+    #charset koi8-r;
+    #access_log  logs/$host.access.log  main;
+    location / {
+        proxy_pass   http://www.bbb.com:8080;
+        index  index.html index.htm;
+    }
+}
+</code></pre></div><p>生产环境</p> <div class="language- extra-class"><pre><code>server {
+    server {
+    listen  443 ssl;
+    server_name  www.bbb.ink;
+
+    #自动添加www
+    if ($host != 'www.bbb.ink' ) {
+	rewrite ^/(.*)$ https://www.bbb.ink/$1 permanent;
+    }
+
+	ssl_certificate   C://cert//a.pem;
+	ssl_certificate_key  C://cert//a.key;
+	ssl_session_cache    shared:SSL:1m;
+	ssl_session_timeout  5m;
+
+	ssl_ciphers  HIGH:!aNULL:!MD5;
+	ssl_prefer_server_ciphers  on;
+    #charset koi8-r;
+
+    #access_log  logs/host.access.log  main;
+
+   location / {
+        root D:/WWW/demo; #定义服务器的默认网站根目录位置
+        index  index.html index.htm; #定义首页索引文件的名称
+		try_files $uri $uri/ /index.html; #解决路由404问题
+    }
+
+    error_page  404  /index.html; #解决刷新出现404页面
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}
+</code></pre></div><h2 id="_7、bugfix：启动-nginx-报错，an-attempt-was-made-to-access-a-socket-in-a-way-forbidden"><a href="#_7、bugfix：启动-nginx-报错，an-attempt-was-made-to-access-a-socket-in-a-way-forbidden" class="header-anchor">#</a> 7、bugfix：启动 nginx 报错，An attempt was made to access a socket in a way forbidden</h2> <p>情况一：运行 cmd, 输入<code>netstat -aon|findstr &quot;443&quot;</code>找到 <code>0.0.0.0:443</code>的 PID，在任务管理器结束进程。 vmware-hostd.exe</p> <p>情况二：把 Routing and Remote Access 服务停掉，重启 nginx 好了.</p> <h2 id="_8、自动跳转到-https"><a href="#_8、自动跳转到-https" class="header-anchor">#</a> 8、自动跳转到 HTTPS</h2> <div class="language- extra-class"><pre><code>server {
+    listen 80;
+    server_name google.0513c.site;
+    rewrite ^(.*)$ https://$host$1 permanent; #访问http跳转至https
+}
+</code></pre></div><h2 id="_9、bugfix：git-提交-push-到远程时出现-error-rpc-failed-http-413-curl-22"><a href="#_9、bugfix：git-提交-push-到远程时出现-error-rpc-failed-http-413-curl-22" class="header-anchor">#</a> 9、bugfix：git 提交 push 到远程时出现 error: RPC failed; HTTP 413 curl 22</h2> <p>打开 nginx.conf 中的 http 配置段中加入<code>client_max_body_size 100m;</code>重启 nginx</p> <h2 id="_10、nginx-配置-gzip"><a href="#_10、nginx-配置-gzip" class="header-anchor">#</a> 10、Nginx 配置 gzip</h2> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>http <span class="token punctuation">{</span>
+    <span class="token punctuation">..</span>.
+    <span class="token function">gzip</span> on<span class="token punctuation">;</span>
+    gzip_disable <span class="token string">&quot;msie6&quot;</span><span class="token punctuation">;</span> <span class="token comment">#配置禁用gzip条件，支持正则。此处表示ie6及以下不启用gzip（因为ie低版本不支持）</span>
+
+    gzip_vary on<span class="token punctuation">;</span> <span class="token comment">#选择支持vary header；改选项可以让前端的缓存服务器缓存经过gzip压缩的页面; 这个可以不写，表示在传送数据时，给客户端说明我使用了gzip压缩</span>
+    <span class="token comment"># gzip_proxied any;</span>
+    gzip_comp_level <span class="token number">6</span><span class="token punctuation">;</span> <span class="token comment">#设置压缩比率，最小为1，处理速度快，传输速度慢；9为最大压缩比，处理速度慢，传输速度快; 这里表示压缩级别，可以是0到9中的任一个，级别越高，压缩就越小，节省了带宽资源，但同时也消耗CPU资源，所以一般折中为6</span>
+    gzip_buffers <span class="token number">16</span> 8k<span class="token punctuation">;</span> <span class="token comment">#设置压缩缓冲区大小，此处设置为4个16K内存作为压缩结果流缓存****</span>
+    gzip_http_version <span class="token number">1.1</span><span class="token punctuation">;</span> <span class="token comment">#压缩版本</span>
+
+    <span class="token comment">#gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript; #js压缩失效，因为缺失application/javascript</span>
+
+    gzip_types    text/xml text/plain text/css application/javascript application/x-javascript application/rss+xml<span class="token punctuation">;</span>     <span class="token comment"># 哪些文件可以被压缩</span>
+    gzip_disable    <span class="token string">&quot;MSIE [1-6]\.&quot;</span><span class="token punctuation">;</span>     <span class="token comment"># IE6无效</span>
+    <span class="token punctuation">..</span>.
+
+    <span class="token comment">#bugfix：git 提交 push 到远程时出现 error: RPC failed; HTTP 413 curl 22</span>
+    client_max_body_size 1024M<span class="token punctuation">;</span>
+    client_body_buffer_size 10M<span class="token punctuation">;</span> <span class="token comment"># 干什么用的？</span>
+
+    include /etc/nginx/conf.d/*.conf<span class="token punctuation">;</span>
+	include /etc/nginx/sites-enabled/*<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="_11、nginx批处理文件nginx-bat"><a href="#_11、nginx批处理文件nginx-bat" class="header-anchor">#</a> 11、<code>nginx</code>批处理文件<code>nginx.bat</code></h2> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>@echo off
+rem 提供Windows下nginx的启动，重启，关闭功能
+
+<span class="token builtin class-name">echo</span> <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>begin<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+
+cls
+::ngxin 所在的盘符
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">NGINX_PATH</span><span class="token operator">=</span>E:
+
+::nginx 所在目录
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">NGINX_DIR</span><span class="token operator">=</span>E:<span class="token punctuation">\</span>nginx-1.15.2<span class="token punctuation">\</span>
+color 0a
+TITLE Nginx 管理程序增强版
+
+CLS
+
+echo.
+echo. ** Nginx 管理程序  ***
+echo. *** create <span class="token number">2018</span>-08-17 ***
+echo.
+
+:MENU
+
+echo. ***** nginx 进程list ******
+::tasklist<span class="token operator">|</span>findstr /i <span class="token string">&quot;nginx.exe&quot;</span>
+tasklist /fi <span class="token string">&quot;imagename eq nginx.exe&quot;</span>
+
+echo.
+
+    <span class="token keyword">if</span> ERRORLEVEL <span class="token number">1</span> <span class="token punctuation">(</span>
+        <span class="token builtin class-name">echo</span> nginx.exe不存在
+    <span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">(</span>
+        <span class="token builtin class-name">echo</span> nginx.exe存在
+    <span class="token punctuation">)</span>
+
+echo.
+::*************************************************************************************************************
+echo.
+	echo.  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> 启动Nginx
+	echo.  <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> 关闭Nginx
+	echo.  <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> 重启Nginx
+	echo.  <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> 刷新控制台
+	echo.  <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> 重新加载Nginx配置文件
+	echo.  <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> 检查测试nginx配置文件
+	echo.  <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> 查看nginx version
+	echo.  <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> 退 出
+echo.
+
+echo.请输入选择的序号:
+<span class="token builtin class-name">set</span> /p <span class="token assign-left variable">ID</span><span class="token operator">=</span>
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;1&quot;</span> GOTO start
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;2&quot;</span> GOTO stop
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;3&quot;</span> GOTO restart
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;4&quot;</span> GOTO MENU
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;5&quot;</span> GOTO reloadConf
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;6&quot;</span> GOTO checkConf
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;7&quot;</span> GOTO showVersion
+	IF <span class="token string">&quot;%id%&quot;</span><span class="token operator">==</span><span class="token string">&quot;0&quot;</span> EXIT
+PAUSE
+
+::*************************************************************************************************************
+::启动
+:start
+	call :startNginx
+	GOTO MENU
+
+::停止
+:stop
+	call :shutdownNginx
+	GOTO MENU
+
+::重启
+:restart
+	call :shutdownNginx
+	call :startNginx
+	GOTO MENU
+
+::检查测试配置文件
+:checkConf
+	call :checkConfNginx
+	GOTO MENU
+
+::重新加载Nginx配置文件
+:reloadConf
+    call :checkConfNginx
+	call :reloadConfNginx
+	GOTO MENU
+
+::显示nginx版本
+:showVersion
+    call :showVersionNginx
+	GOTO MENU
+
+
+::*************************************************************************************
+::底层
+::*************************************************************************************
+:shutdownNginx
+	echo.
+	echo.关闭Nginx<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+	taskkill /F /IM nginx.exe <span class="token operator">&gt;</span> nul
+	echo.OK,关闭所有nginx 进程
+	goto :eof
+
+:startNginx
+	echo.
+	echo.启动Nginx<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+	IF NOT EXIST <span class="token string">&quot;%NGINX_DIR%nginx.exe&quot;</span> <span class="token punctuation">(</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;%NGINX_DIR%nginx.exe&quot;</span>不存在
+        goto :eof
+     <span class="token punctuation">)</span>
+
+	%NGINX_PATH%
+	<span class="token builtin class-name">cd</span> <span class="token string">&quot;%NGINX_DIR%&quot;</span>
+
+	IF EXIST <span class="token string">&quot;%NGINX_DIR%nginx.exe&quot;</span> <span class="token punctuation">(</span>
+		<span class="token builtin class-name">echo</span> <span class="token string">&quot;start '' nginx.exe&quot;</span>
+		start <span class="token string">&quot;&quot;</span> nginx.exe
+	<span class="token punctuation">)</span>
+	echo.OK
+	goto :eof
+
+
+:checkConfNginx
+	echo.
+	echo.检查测试 nginx 配置文件<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+	IF NOT EXIST <span class="token string">&quot;%NGINX_DIR%nginx.exe&quot;</span> <span class="token punctuation">(</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;%NGINX_DIR%nginx.exe&quot;</span>不存在
+        goto :eof
+     <span class="token punctuation">)</span>
+
+	%NGINX_PATH%
+	<span class="token builtin class-name">cd</span> <span class="token string">&quot;%NGINX_DIR%&quot;</span>
+	nginx -t -c conf/nginx.conf
+
+	goto :eof
+
+::重新加载 nginx 配置文件
+:reloadConfNginx
+	echo.
+	echo.重新加载 nginx 配置文件<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+	IF NOT EXIST <span class="token string">&quot;%NGINX_DIR%nginx.exe&quot;</span> <span class="token punctuation">(</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;%NGINX_DIR%nginx.exe&quot;</span>不存在
+        goto :eof
+     <span class="token punctuation">)</span>
+
+	%NGINX_PATH%
+	<span class="token builtin class-name">cd</span> <span class="token string">&quot;%NGINX_DIR%&quot;</span>
+	nginx -s reload
+
+	goto :eof
+
+::显示nginx版本
+:showVersionNginx
+	echo.
+	%NGINX_PATH%
+	<span class="token builtin class-name">cd</span> <span class="token string">&quot;%NGINX_DIR%&quot;</span>
+	nginx -V
+ 	goto :eof
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br></div></div><h2 id="_12、server-配置"><a href="#_12、server-配置" class="header-anchor">#</a> 12、server 配置</h2> <p>参考地址<a href="https://www.cnblogs.com/Laggage/p/11660853.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/Laggage/p/11660853.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>server <span class="token punctuation">{</span>
+    <span class="token comment">#侦听80端口</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    <span class="token comment">#定义使用www.xx.com访问</span>
+    server_name  www.xx.com<span class="token punctuation">;</span>
+    <span class="token comment">#设定本虚拟主机的访问日志</span>
+    access_log  logs/www.xx.com.access.log  main<span class="token punctuation">;</span>
+    <span class="token comment">#默认请求</span>
+    location / <span class="token punctuation">{</span>
+          root   /root<span class="token punctuation">;</span>      <span class="token comment">#定义服务器的默认网站根目录位置</span>
+          index index.php index.html index.htm<span class="token punctuation">;</span>   <span class="token comment">#定义首页索引文件的名称</span>
+          fastcgi_pass  www.xx.com<span class="token punctuation">;</span>
+          fastcgi_param  SCRIPT_FILENAME  <span class="token variable">$document_root</span>/<span class="token variable">$fastcgi_script_name</span><span class="token punctuation">;</span>
+          include /etc/nginx/fastcgi_params<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment"># 定义错误提示页面</span>
+    error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span> /50x.html<span class="token punctuation">;</span>
+        location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+        root   /root<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">#静态文件，nginx自己处理</span>
+    location ~ ^/<span class="token punctuation">(</span>images<span class="token operator">|</span>javascript<span class="token operator">|</span>js<span class="token operator">|</span>css<span class="token operator">|</span>flash<span class="token operator">|</span>media<span class="token operator">|</span>static<span class="token punctuation">)</span>/ <span class="token punctuation">{</span>
+        root /var/www/virtual/htdocs<span class="token punctuation">;</span>
+        <span class="token comment">#过期30天，静态文件不怎么更新，过期可以设大一点，如果频繁更新，则可以设置得小一点。</span>
+        expires 30d<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">#PHP 脚本请求全部转发到 FastCGI处理. 使用FastCGI默认配置.</span>
+    location ~ <span class="token punctuation">\</span>.php$ <span class="token punctuation">{</span>
+        root /root<span class="token punctuation">;</span>
+        fastcgi_pass <span class="token number">127.0</span>.0.1:9000<span class="token punctuation">;</span>
+        fastcgi_index index.php<span class="token punctuation">;</span>
+        fastcgi_param SCRIPT_FILENAME /home/www/www<span class="token variable">$fastcgi_script_name</span><span class="token punctuation">;</span>
+        include fastcgi_params<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">#设定查看Nginx状态的地址</span>
+    location /NginxStatus <span class="token punctuation">{</span>
+        stub_status            on<span class="token punctuation">;</span>
+        access_log              on<span class="token punctuation">;</span>
+        auth_basic              <span class="token string">&quot;NginxStatus&quot;</span><span class="token punctuation">;</span>
+        auth_basic_user_file  conf/htpasswd<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment"># 配置文件下载服务</span>
+    location /download <span class="token punctuation">{</span>
+        root /www<span class="token punctuation">;</span>
+        <span class="token comment"># 让浏览器打开下载窗口,关键在于attachment,attachment后面不可以加冒号</span>
+        add_header Content-Disposition <span class="token string">'attachment'</span><span class="token punctuation">;</span>
+        add_header Content-Type: <span class="token string">'APPLICATION/OCTET-STREAM'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">#禁止访问 .htxxx 文件</span>
+    location ~ /<span class="token punctuation">\</span>.ht <span class="token punctuation">{</span>
+        deny all<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br></div></div><h2 id="_13、nginx-基础使用说明"><a href="#_13、nginx-基础使用说明" class="header-anchor">#</a> 13、Nginx 基础使用说明</h2> <ul><li>情况一</li></ul> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>location /proxy/ <span class="token punctuation">{</span>
+     proxy_pass http://127.0.0.1:81/<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>会被代理到http://127.0.0.1:81/index.html</p> <ul><li>情况二</li></ul> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>location /proxy/ <span class="token punctuation">{</span>
+proxy_pass http://127.0.0.1:81<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>会被代理到http://127.0.0.1:81/proxy/index.html</p> <ul><li>情况三</li></ul> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>location /proxy/ <span class="token punctuation">{</span>
+proxy_pass http://127.0.0.1:81/test/<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>会被代理到http://127.0.0.1:81/test/index.html</p> <ul><li>情况四(TODO：有疑问)</li></ul> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>location /proxy/ <span class="token punctuation">{</span>
+proxy_pass http://127.0.0.1:81/test<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>会被代理到http://127.0.0.1:81/test/index.html</p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-40a3448a><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_1、下载-nginx-for-windows，并解压到程序目录" class="sidebar-link" data-v-40a3448a>1、下载 nginx for windows，并解压到程序目录</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_2、启动-nginx" class="sidebar-link" data-v-40a3448a>2、启动 nginx</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_3、检查-nginx-是否启动成功" class="sidebar-link" data-v-40a3448a>3、检查 nginx 是否启动成功</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_4、端口占用排查" class="sidebar-link" data-v-40a3448a>4、端口占用排查</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_5、nginx-之反向代理" class="sidebar-link" data-v-40a3448a>5、nginx 之反向代理</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_6、nginx-服务器安装-ssl-证书" class="sidebar-link" data-v-40a3448a>6、nginx 服务器安装 SSL 证书</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_7、bugfix：启动-nginx-报错，an-attempt-was-made-to-access-a-socket-in-a-way-forbidden" class="sidebar-link" data-v-40a3448a>7、bugfix：启动 nginx 报错，An attempt was made to access a socket in a way forbidden</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_8、自动跳转到-https" class="sidebar-link" data-v-40a3448a>8、自动跳转到 HTTPS</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_9、bugfix：git-提交-push-到远程时出现-error-rpc-failed-http-413-curl-22" class="sidebar-link" data-v-40a3448a>9、bugfix：git 提交 push 到远程时出现 error: RPC failed; HTTP 413 curl 22</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_10、nginx-配置-gzip" class="sidebar-link" data-v-40a3448a>10、Nginx 配置 gzip</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_11、nginx批处理文件nginx-bat" class="sidebar-link" data-v-40a3448a>11、nginx批处理文件nginx.bat</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_12、server-配置" class="sidebar-link" data-v-40a3448a>12、server 配置</a></li><li class="level-2" data-v-40a3448a><a href="/blogs/technology/operations/nginx/installation-and-configuration-of-nginx-windows.html#_13、nginx-基础使用说明" class="sidebar-link" data-v-40a3448a>13、Nginx 基础使用说明</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-6f76602d data-v-6f76602d><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-6f76602d><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-6f76602d></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-6f76602d></path></svg></div></div></div>
+    <script src="/assets/js/app.4e817bdf.js" defer></script><script src="/assets/js/3.f9c9dbb0.js" defer></script><script src="/assets/js/1.154bf585.js" defer></script><script src="/assets/js/42.7a668132.js" defer></script>
+  </body>
+</html>
